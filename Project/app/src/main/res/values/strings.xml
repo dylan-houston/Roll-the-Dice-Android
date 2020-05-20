@@ -1,6 +1,15 @@
 <resources>
     <string name="app_name">Roll the Dice</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_numerical">Numerical</string>
+    <string name="title_alphabetical">Alphabet</string>
+    <string name="title_settings">Settings</string>
+    <string name="roll_button_string">ROLL!</string>
+    <string name="down_stepper_desc">Reduce the number of dice</string>
+    <string name="up_stepper_desc">Increase the number of dice</string>
+    <string name="one_die">1 Die</string>
+    <string name="two_dice">2 Dice</string>
+    <string name="three_dice">3 Dice</string>
+    <string name="four_dice">4 Dice</string>
+    <string name="five_dice">5 Dice</string>
+    <string name="six_dice">6 Dice</string>
 </resources>

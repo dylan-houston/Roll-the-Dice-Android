@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_numerical">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.dylanhouston.rollthedice.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/navigation_numerical"
+        android:name="com.dylanhouston.rollthedice.ui.numerical.NumericalFragment"
+        android:label="@string/title_numerical"
+        tools:layout="@layout/fragment_numerical" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.dylanhouston.rollthedice.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_alphabetical"
+        android:name="com.dylanhouston.rollthedice.ui.alphabetical.AlphabeticalFragment"
+        android:label="@string/title_alphabetical"
+        tools:layout="@layout/fragment_alphabetical" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.dylanhouston.rollthedice.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_settings"
+        android:name="com.dylanhouston.rollthedice.ui.settings.SettingsFragment"
+        android:label="@string/title_numerical"
+        tools:layout="@layout/fragment_settings" />
 </navigation>

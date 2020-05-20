@@ -1,4 +1,4 @@
-package com.dylanhouston.rollthedice.ui.dashboard;
+package com.dylanhouston.rollthedice.ui.alphabetical;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.dylanhouston.rollthedice.R;
 
-public class DashboardFragment extends Fragment {
+public class AlphabeticalFragment extends Fragment {
 
-    private DashboardViewModel dashboardViewModel;
+    private AlphabeticalViewModel alphabeticalViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        dashboardViewModel =
-                ViewModelProviders.of(this).get(DashboardViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
+        alphabeticalViewModel =
+                ViewModelProviders.of(this).get(AlphabeticalViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_alphabetical, container, false);
         final TextView textView = root.findViewById(R.id.text_dashboard);
-        dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        alphabeticalViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
