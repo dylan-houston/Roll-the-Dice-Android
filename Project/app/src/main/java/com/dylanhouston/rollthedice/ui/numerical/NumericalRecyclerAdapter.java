@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.dylanhouston.rollthedice.R;
@@ -12,22 +13,23 @@ import com.dylanhouston.rollthedice.R;
 
 public class NumericalRecyclerAdapter extends RecyclerView.Adapter<NumericalRecyclerAdapter.MyViewHolder> {
 
-    private int[] diceImages;
+    public int[] diceImages;
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder {
+    static class MyViewHolder extends RecyclerView.ViewHolder {
 
         ImageView diceImageView;
 
-        public MyViewHolder(View itemView) {
+        MyViewHolder(View itemView) {
             super(itemView);
             this.diceImageView = itemView.findViewById(R.id.imageView);
         }
     }
 
-    public NumericalRecyclerAdapter(int[] diceImages) {
+    NumericalRecyclerAdapter(int[] diceImages) {
         this.diceImages = diceImages;
     }
 
+    @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent,
                                            int viewType) {

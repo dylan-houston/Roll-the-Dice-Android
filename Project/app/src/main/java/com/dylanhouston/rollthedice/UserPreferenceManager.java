@@ -3,6 +3,9 @@ package com.dylanhouston.rollthedice;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.dylanhouston.rollthedice.ui.numerical.NumericalFragment;
+
+import java.util.HashMap;
 import java.util.Map;
 
 public class UserPreferenceManager {
@@ -23,6 +26,7 @@ public class UserPreferenceManager {
     public UserPreferenceManager(Context context) {
         this.sharedPreferences = context.getSharedPreferences(
                 PREFERENCES, 0);
+        this.letterPreferences = new HashMap<>();
 
         for (LetterPreferences preference : LetterPreferences.values()) {
             this.letterPreferences.put(
@@ -54,7 +58,7 @@ public class UserPreferenceManager {
      * @param value the value of the preference
      */
     public void setDefaultNumberOfDice(int value) {
-        if (value > 0 && value <= MainActivity.MAX_NUM_NUMERICAL_DICE) {
+        if (value > 0 && value <= NumericalFragment.MAX_NUM_NUMERICAL_DICE) {
             // changes the preference in the map
             defaultNumberOfDice = value;
 

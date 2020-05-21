@@ -22,24 +22,6 @@ import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
-    // the preferences
-    private UserPreferenceManager pref = new UserPreferenceManager(this);
-
-    // the adviews
-    private AdView numericalAdView;
-
-    protected static final int MAX_NUM_NUMERICAL_DICE = 6;
-
-    // the recycler view for displaying the dice
-    private RecyclerView numericalDiceRecyclerView;
-    private RecyclerView.Adapter numericalDiceRecyclerViewAdapter;
-    private RecyclerView.LayoutManager numericalDiceRecyclerLayoutMan;
-
-    // the numerical dice to display
-    private int[] diceImages = {};
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,45 +35,6 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
-
-        setupAds();
-    }
-
-    /**
-     * Sets up the ads for the app and the ad views on each page.
-     */
-    private void setupAds() {
-        // sets up the ads in the app
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-        });
-
-        // sets up ad in numerical controller
-        numericalAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        numericalAdView.loadAd(adRequest);
-    }
-
-    private void setupNumericalRecycler() {
-        // sets up the dice images
-        diceImages = new int[pref.getDefaultNumberOfDice()];
-        Arrays.fill(diceImages, R.drawable.blank_dice);
-
-        numericalDiceRecyclerView = findViewById(R.id.dice_recycle_view);
-
-        // use this setting to improve performance if you know that changes
-        // in content do not change the layout size of the RecyclerView
-        numericalDiceRecyclerView.setHasFixedSize(true);
-
-        // use a linear layout manager
-        numericalDiceRecyclerLayoutMan = new LinearLayoutManager(this);
-        numericalDiceRecyclerView.setLayoutManager(numericalDiceRecyclerLayoutMan);
-
-        // specify an adapter
-        numericalDiceRecyclerViewAdapter = new NumericalRecyclerAdapter(diceImages);
-        numericalDiceRecyclerView.setAdapter(numericalDiceRecyclerViewAdapter);
     }
 }
 

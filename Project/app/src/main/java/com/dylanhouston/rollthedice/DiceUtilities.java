@@ -73,7 +73,7 @@ public abstract class DiceUtilities {
     }
 
     private static int getRandomElement(List<Integer> list) {
-        int randomIndex = (int) (Math.random() * ((list.size())+1));
+        int randomIndex = (int) (Math.random() * (list.size() - 1));
         return list.get(randomIndex);
     }
 
