@@ -18,8 +18,14 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.Arrays;
+
 public class MainActivity extends AppCompatActivity {
 
+    // the preferences
+    private UserPreferenceManager pref = new UserPreferenceManager(this);
+
+    // the adviews
     private AdView numericalAdView;
 
     protected static final int MAX_NUM_NUMERICAL_DICE = 6;
@@ -31,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
     // the numerical dice to display
     private int[] diceImages = {};
+
 
 
     @Override
@@ -68,7 +75,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupNumericalRecycler() {
-        numericalDiceRecyclerView = (RecyclerView) findViewById(R.id.dice_recycle_view);
+        // sets up the dice images
+        diceImages = new int[pref.getDefaultNumberOfDice()];
+        Arrays.fill(diceImages, R.drawable.blank_dice);
+
+        numericalDiceRecyclerView = findViewById(R.id.dice_recycle_view);
 
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
@@ -82,7 +93,5 @@ public class MainActivity extends AppCompatActivity {
         numericalDiceRecyclerViewAdapter = new NumericalRecyclerAdapter(diceImages);
         numericalDiceRecyclerView.setAdapter(numericalDiceRecyclerViewAdapter);
     }
-
-
 }
 
