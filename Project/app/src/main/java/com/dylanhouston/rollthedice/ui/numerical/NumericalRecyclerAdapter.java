@@ -32,7 +32,7 @@ public class NumericalRecyclerAdapter extends
     public NumericalRecyclerAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent,
                                                                     int viewType) {
         // create a new view
-        ImageView v = new ImageView()
+        ImageView v = new ImageView(parent.getContext());
         MyViewHolder vh = new MyViewHolder(v);
         return vh;
     }
