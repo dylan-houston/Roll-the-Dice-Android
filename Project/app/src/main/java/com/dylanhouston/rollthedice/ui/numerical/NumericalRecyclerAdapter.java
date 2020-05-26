@@ -3,7 +3,9 @@ package com.dylanhouston.rollthedice.ui.numerical;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,20 +15,24 @@ import com.dylanhouston.rollthedice.R;
 
 public class NumericalRecyclerAdapter extends RecyclerView.Adapter<NumericalRecyclerAdapter.MyViewHolder> {
 
-    public int[] diceImages;
+    int[] diceImages;
+    private View parent;
 
     static class MyViewHolder extends RecyclerView.ViewHolder {
 
+        public View parentLayout;
         ImageView diceImageView;
 
-        MyViewHolder(View itemView) {
+        MyViewHolder(View itemView, View parentLayout) {
             super(itemView);
             this.diceImageView = itemView.findViewById(R.id.imageView);
+            this.parentLayout = parentLayout;
         }
     }
 
-    NumericalRecyclerAdapter(int[] diceImages) {
+    NumericalRecyclerAdapter(View parent, int[] diceImages) {
         this.diceImages = diceImages;
+        this.parent = parent;
     }
 
     @NonNull
@@ -36,7 +42,7 @@ public class NumericalRecyclerAdapter extends RecyclerView.Adapter<NumericalRecy
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.dice_card_layout, parent, false);
 
-        return new MyViewHolder(view);
+        return new MyViewHolder(view, this.parent);
     }
 
     @Override

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Roll the Dice</string>
+    <string name="app_name">Dice</string>
     <string name="title_numerical">Numerical</string>
     <string name="title_alphabetical">Alphabet</string>
     <string name="title_settings">Settings</string>

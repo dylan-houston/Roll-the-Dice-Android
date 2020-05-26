@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -88,7 +89,7 @@ public class NumericalFragment extends Fragment {
         numericalDiceRecyclerView.setLayoutManager(numericalDiceRecyclerLayoutMan);
 
         // the content of the recycler (the dice)
-        numericalDiceRecyclerViewAdapter = new NumericalRecyclerAdapter(diceImages);
+        numericalDiceRecyclerViewAdapter = new NumericalRecyclerAdapter(view, diceImages);
         numericalDiceRecyclerView.setAdapter(numericalDiceRecyclerViewAdapter);
     }
 

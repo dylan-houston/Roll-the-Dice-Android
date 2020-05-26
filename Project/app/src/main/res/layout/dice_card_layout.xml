@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="250dp"
     android:orientation="vertical"
     android:tag="cards main container">
 
     <androidx.cardview.widget.CardView android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:id="@+id/dice_card"
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
         card_view:cardBackgroundColor="@color/color_white"
         card_view:cardCornerRadius="10dp"
         card_view:cardElevation="5dp"
@@ -17,17 +17,17 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/imageView"
-                android:tag="image_tag"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:src="@drawable/blank_dice"/>
+                android:src="@drawable/blank_dice"
+                android:tag="image_tag" />
 
         </LinearLayout>
 
