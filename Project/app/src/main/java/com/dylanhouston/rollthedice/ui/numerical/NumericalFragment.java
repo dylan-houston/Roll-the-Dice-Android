@@ -56,7 +56,7 @@ public class NumericalFragment extends Fragment {
 
         // sets up the individual components
         setupNumericalRecycler(pref, root);
-        setupAds(root);
+        setupAds(root, this);
         setupRollButton(root);
         setupNumDiceButtons(root);
         setupNumDiceLabel(root);
@@ -94,11 +94,12 @@ public class NumericalFragment extends Fragment {
 
     /**
      * Sets up the ads for the app and the ad views on each page.
+     * @param fragment the fragment
      * @param view the view for this fragment
      */
-    private void setupAds(View view) {
+    public static void setupAds(View view, Fragment fragment) {
         // sets up the ads in the app
-        MobileAds.initialize(getContext(), new OnInitializationCompleteListener() {
+        MobileAds.initialize(fragment.getContext(), new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
             }

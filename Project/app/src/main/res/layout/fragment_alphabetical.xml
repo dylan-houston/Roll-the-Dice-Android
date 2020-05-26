@@ -16,7 +16,7 @@
         tools:layout_editor_absoluteY="0dp">
 
         <include
-            android:id="@+id/alpha_dice_image"
+            android:id="@+id/alpha_dice_card"
             layout="@layout/dice_card_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
