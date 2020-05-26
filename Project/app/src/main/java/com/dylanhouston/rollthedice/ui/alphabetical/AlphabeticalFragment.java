@@ -16,20 +16,11 @@ import com.dylanhouston.rollthedice.R;
 
 public class AlphabeticalFragment extends Fragment {
 
-    private AlphabeticalViewModel alphabeticalViewModel;
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        alphabeticalViewModel =
-                ViewModelProviders.of(this).get(AlphabeticalViewModel.class);
+        ViewModelProviders.of(this).get(AlphabeticalViewModel.class);
         View root = inflater.inflate(R.layout.fragment_alphabetical, container, false);
-        final TextView textView = root.findViewById(R.id.text_dashboard);
-        alphabeticalViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
         return root;
     }
 }

@@ -34,7 +34,7 @@ public class NumericalRecyclerAdapter extends RecyclerView.Adapter<NumericalRecy
     public MyViewHolder onCreateViewHolder(ViewGroup parent,
                                            int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.cards_layout, parent, false);
+                .inflate(R.layout.dice_card_layout, parent, false);
 
         return new MyViewHolder(view);
     }

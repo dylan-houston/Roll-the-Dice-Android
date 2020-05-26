@@ -10,7 +10,7 @@ public class NumericalViewModel extends ViewModel {
 
     public NumericalViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        mText.setValue("This is numerical fragment");
     }
 
     public LiveData<String> getText() {
