@@ -12,4 +12,6 @@
     <string name="four_dice">4 Dice</string>
     <string name="five_dice">5 Dice</string>
     <string name="six_dice">6 Dice</string>
+    <string name="default_numerical">Default Number of Numerical Dice</string>
+    <string name="alphabetical_category">Letters Included in Alphabet Dice</string>
 </resources>
