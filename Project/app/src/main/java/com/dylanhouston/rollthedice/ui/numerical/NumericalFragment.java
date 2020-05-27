@@ -26,6 +26,8 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 
 import java.util.Arrays;
 
+import static com.google.android.gms.ads.RequestConfiguration.TAG_FOR_UNDER_AGE_OF_CONSENT_TRUE;
+
 public class NumericalFragment extends Fragment {
 
     // the maximum possible number of dice
@@ -107,9 +109,10 @@ public class NumericalFragment extends Fragment {
         });
 
         // sets up ad in numerical controller
-        AdView numericalAdView = view.findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        numericalAdView.loadAd(adRequest);
+        AdView adView = view.findViewById(R.id.adView);
+        AdRequest.Builder reqBuilder = new AdRequest.Builder();
+        AdRequest adRequest = reqBuilder.build();
+        adView.loadAd(adRequest);
     }
 
     /**
